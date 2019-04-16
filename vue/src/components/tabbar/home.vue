@@ -1,11 +1,12 @@
 <template>
     <div>
         <!--轮播图-->
-        <mt-swipe :auto="4000">
-            <mt-swipe-item v-for="item in bannerList" :key="item.id">
-                <img :src="item.img" alt="">
-            </mt-swipe-item>
-        </mt-swipe>
+        <!--<mt-swipe :auto="4000">-->
+            <!--<mt-swipe-item v-for="item in bannerList" :key="item.id">-->
+                <!--<img :src="item.img" alt="">-->
+            <!--</mt-swipe-item>-->
+        <!--</mt-swipe>-->
+        <swiper :bannerList="bannerList" :isFull="true"></swiper>
 
         <!--六宫格区域-->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -21,10 +22,12 @@
                     <div class="mui-media-body">图片分享</div>
                 </router-link>
             </li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-                <img src="../../images/menu3.png" alt="">
-                <div class="mui-media-body">商品购买</div>
-            </a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <router-link to="/home/goodsList">
+                    <img src="../../images/menu3.png" alt="">
+                    <div class="mui-media-body">商品购买</div>
+                </router-link>
+            </li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                 <img src="../../images/menu4.png" alt="">
                 <div class="mui-media-body">留言反馈</div>
@@ -43,8 +46,12 @@
 </template>
 
 <script>
+    import swiper from '../subcomponents/swiper.vue'
     export default {
         name: "home",
+        components:{
+          swiper
+        },
         data() {
             return {
                 bannerList: []
@@ -69,18 +76,18 @@
 </script>
 
 <style scoped lang="scss">
-    .mint-swipe {
-        height: 200px;
+    /*.mint-swipe {*/
+        /*height: 200px;*/
 
-        .mint-swipe-item {
-            background-color: pink;
+        /*.mint-swipe-item {*/
+            /*background-color: pink;*/
 
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+            /*img {*/
+                /*width: 100%;*/
+                /*height: 100%;*/
+            /*}*/
+        /*}*/
+    /*}*/
 
     .mui-grid-view.mui-grid-9 {
         background-color: #fff;

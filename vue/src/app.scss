@@ -1,8 +1,19 @@
-figure{
+figure {
   display: inline-block;
   margin: 5px 15px;
-  img{
+
+  img {
     width: 80px;
     height: 55px;
+  }
+}
+
+//图文列表
+.content {
+  padding: 3px;
+
+  img {
+    width: 100%;
+    float: left;
   }
 }
