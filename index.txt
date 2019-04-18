@@ -1,1 +1,1 @@
-hello vue this is update
+this is vue update
